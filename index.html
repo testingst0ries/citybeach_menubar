@@ -11,6 +11,12 @@
     <script src="./user-meta-data-container.js"></script>
     <script src="./app.js"></script>
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const accHolder = document.querySelector("#acc");
+            if (accHolder){
+                acc.innerText = `(${getAcount()})`;
+            }
+        });
         function getAcount() {
 			var account_id = '606908';
 			const urlSearchParams = new URLSearchParams(window.location.search);
@@ -434,7 +440,14 @@ f=false,w=window,d=document,vwoCodeEl=d.querySelector('#vwoCode'),code={use_exis
                             </li>
                             <li class="level-1-menu drop-down-menus" role="presentation">
                                 <a href="javascript:(function()%7Bvar%20accountId%20%3D%20prompt(%22Enter%20the%20accountId%22)%3B%0A%09if(accountId)%20%7B%0A%09%09const%20u%20%3D%20new%20URL(window.top.location.href)%0A%09%09u.searchParams.set('ac'%2C%20accountId)%3B%0A%09%09window.location.href%20%3D%20u.toString()%3B%0A%09%7D%7D)()%3B" class="ac_change_btn">
-                                    Switch Account
+                                    <span id="acc"></span>
+                                    <span style="
+                                        transform: scale(2) rotate(-6deg);
+                                        display: inline-block;
+                                        margin-left: 10px;
+                                        color: limegreen;
+                                        font-family: math;
+                                    ">↹</span>
                                 </a>
                             </li>
                             <li class="level-1-menu drop-down-menus" role="presentation" id="womens">
