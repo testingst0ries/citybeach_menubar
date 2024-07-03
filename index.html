@@ -11,6 +11,13 @@
     <script src="./user-meta-data-container.js"></script>
     <script src="./app.js"></script>
     <script>
+        function getAcount() {
+			var account_id = '606908';
+			const urlSearchParams = new URLSearchParams(window.location.search);
+			const params = Object.fromEntries(urlSearchParams.entries());
+			if (params.ac) { account_id = params.ac; }
+			return account_id;
+		}
         $(function() {
             console.log('$', $);
             // var t = r - $("header").height();
@@ -45,7 +52,7 @@
 <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
 <script type='text/javascript' id='vwoCode'>
 window._vwo_code=window._vwo_code || (function() {
-var account_id=606908,
+var account_id=getAcount(),
 version = 1.5,
 settings_tolerance=2000,
 library_tolerance=2500,
@@ -104,6 +111,9 @@ f=false,w=window,d=document,vwoCodeEl=d.querySelector('#vwoCode'),code={use_exis
                                                 data-analytics-link-group="Link Click - Main Nav"
                                                 data-analytics-link-level="2">
                                                 <li class="level-2-menu drop-down-menus" role="presentation">
+                                                    <a href="javascript:(function()%7Bvar%20accountId%20%3D%20prompt(%22Enter%20the%20accountId%22)%3B%0A%09if(accountId)%20%7B%0A%09%09const%20u%20%3D%20new%20URL(window.top.location.href)%0A%09%09u.searchParams.set('ac'%2C%20accountId)%3B%0A%09%09window.location.href%20%3D%20u.toString()%3B%0A%09%7D%7D)()%3B" class="ac_change_btn">
+                                                        Switch Account
+                                                    </a>
                                                     <a href="/au/womens-new-in/" class="womens new in nav-link-menu"
                                                         role="button" data-toggle="dropdown" aria-haspopup="true"
                                                         aria-expanded="false" tabindex="0" style="">
