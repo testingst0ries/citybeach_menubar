@@ -1,2 +1,2 @@
 https://citybeach-menubar.pages.dev/*
-    X-Frame-Options: DENY
+    X-Frame-Options: sameorigin
