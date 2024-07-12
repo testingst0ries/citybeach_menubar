@@ -5,6 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js')
+                .then(registration => {
+                console.log('Service Worker registered successfully:', registration.scope);
+                })
+                .catch(error => {
+                console.log('Service Worker registration failed:', error);
+                });
+            });
+        }
+    </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./user-meta-data.js"></script>
     <script src="./user-info.js"></script>
